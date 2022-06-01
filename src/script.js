@@ -77,6 +77,17 @@ function createItem() {
     let newItem = document.createElement('div')
     newItem.classList.add('item')
     newItem.setAttribute('draggable', 'true')
+    
+    let counter = document.createElement('input')
+    counter.classList.add('itemCounter')
+    counter.setAttribute('type', 'number')
+    
+    let itemName = document.createElement('input')
+    itemName.classList.add('itemName')
+    itemName.setAttribute('type', 'text')
+
+    newItem.appendChild(counter)
+    newItem.appendChild(itemName)
   
     this.appendChild(newItem)
     newItem.addEventListener('dragstart', dragstart)

@@ -1,2 +1,2 @@
 # forgotten-ballad-sheet
- A interactive character sheet for Forgotten Ballad RPG
+ An interactive character sheet for Forgotten Ballad RPG
