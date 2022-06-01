@@ -6,7 +6,11 @@ const instrumentImgInput = document.getElementById("instrumentImgInput")
 const heartsMax = document.getElementById("heartsMax")
 const heartsButton = document.getElementById("heartsButton")
 const heartsWrap = document.querySelector(".heartsWrap")
-const modal = document.getElementsByClassName('modal')
+const modal = document.getElementById('modal')
+const newItemImage = document.getElementById('newItemImage')
+const newItemName = document.getElementById('newItemName')
+const newItemAmount = document.getElementById('newItemAmount')
+var newItemUploadedImage = ""
 
 instrumentImgInput.addEventListener("change", function() {
   const reader = new FileReader();
@@ -78,14 +82,15 @@ function createItem() {
     let newItem = document.createElement('div')
     newItem.classList.add('item')
     newItem.setAttribute('draggable', 'true')
-    
-    let counter = document.createElement('input')
+    newItem.style.backgroundImage = `url(${newItemUploadedImage})`
+
+    let counter = document.createElement('div')
     counter.classList.add('itemCounter')
-    counter.setAttribute('type', 'number')
+    counter.innerText = newItemAmount.value
     
-    let itemName = document.createElement('input')
+    let itemName = document.createElement('div')
     itemName.classList.add('itemName')
-    itemName.setAttribute('type', 'text')
+    itemName.innerText = newItemName.value
 
     newItem.appendChild(counter)
     newItem.appendChild(itemName)
@@ -96,8 +101,6 @@ function createItem() {
   }
 
 }
-
-const newItemImage = document.getElementById('newItemImage')
 
 newItemImage.addEventListener('change', function(){
   const reader = new FileReader()
