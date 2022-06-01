@@ -24,7 +24,7 @@
     <div class="attributes">
       
       <div class="instrument" id="instrument"><label>Instrument</label>
-        <input type="file" id="imageInput" accept="image/jpeg, image/png, image/jpg">
+        <input type="file" id="instrumentImgInput" accept="image/jpeg, image/png, image/jpg">
         </div>
       
       <div id="armor">
@@ -74,6 +74,24 @@
     </div>
     <footer></footer>
       
+    </section>
+
+    <section class="modal on">
+      <div class="container">
+        <h3 class="modalTitle">New Item</h3>
+        <a href="" class="closeButton">X</a>
+        
+        <label for="newItemName">Item Name</label>
+        <input name="newItemName" id="newItemName" type="text">
+
+        <label for="newItemAmount">Item Amount</label>
+        <input name="newItemAmount" id="newItemAmount" type="number">
+
+        <label for="newItemImage">Image</label>
+        <input name="newItemImage" id="newItemImage" type="file" accept="image/jpg, image/png">
+
+        <button id="createItemButton">Create Item</button>
+      </div>
     </section>
 
     <script src="./src/script.js"></script>

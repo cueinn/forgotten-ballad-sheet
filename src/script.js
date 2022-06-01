@@ -2,16 +2,17 @@
 function log(message) {console.log(message)}
 
 const instrument = document.getElementById('instrument')
-const imageInput = document.getElementById("imageInput")
+const instrumentImgInput = document.getElementById("instrumentImgInput")
 const heartsMax = document.getElementById("heartsMax")
 const heartsButton = document.getElementById("heartsButton")
 const heartsWrap = document.querySelector(".heartsWrap")
+const modal = document.getElementsByClassName('modal')
 
-imageInput.addEventListener("change", function(){
+instrumentImgInput.addEventListener("change", function() {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     const uploaded_image = reader.result;
-    instrument.style.backgroundImage = `url(${uploaded_image})`;
+    instrument.style.backgroundImage = `url(${uploaded_image})`
   });
   reader.readAsDataURL(this.files[0]);
 })
@@ -94,4 +95,21 @@ function createItem() {
     newItem.addEventListener('dragend', dragend)
   }
 
+}
+
+const newItemImage = document.getElementById('newItemImage')
+
+newItemImage.addEventListener('change', function(){
+  const reader = new FileReader()
+
+  reader.addEventListener("load", function(){
+    var newItemUploadedImage = reader.result
+  })
+})
+
+function openModal() {
+  modal.classList.add('on')
+}
+function closeModal() {
+  modal.classList.remove('on')
 }
