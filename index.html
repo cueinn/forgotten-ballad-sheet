@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Sheet 🍃 Forgotten Ballad</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+
+    <header class="logo">
+      <h1>Forgotten<br>Ballad</h1>
+    </header>
+    
+    <div class="about">
+      <label>Name <input name="name" type="text"></label>
+      <label>Pronouns <input name="pronouns" type="text"></label>
+      <label>Background <input name="background" type="text"></label>
+    </div>
+    
+    <div class="attributes">
+      
+      <div class="instrument" id="instrument"><label>Instrument</label>
+        <input type="file" id="imageInput" accept="image/jpeg, image/png, image/jpg">
+        </div>
+      
+      <div id="armor">
+        <input name="armor" type="number" value="0" max="3" min="0">
+      </div>
+      
+      <div id="hearts">
+        <div class="heartsWrap">
+          <div>
+            <input id="heart1" name="hearts" type="checkbox" checked>
+            <label for="heart1">♥</label>
+          </div>
+          <div>
+            <input id="heart2" name="hearts" type="checkbox" checked>
+            <label for="heart2">♥</label>
+          </div>
+          <div>
+            <input id="heart3" name="hearts" type="checkbox" checked>
+            <label for="heart3">♥</label>
+          </div>
+        </div>
+        <label for=""></label>
+        <input id="heartsMax" type="number" value="3">
+        <button id="heartsButton" onclick="editHearts()">Edit</button>
+      </div>
+      
+    </div>
+    
+    <div class="inventory">
+      <h2>Inventory</h2>
+      
+      <div class="invetorySet">
+        <h3>Equipped</h3>
+       
+        <div class="itemSlot">
+          <div class="item" draggable="true"></div>
+        </div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        
+      </div>
+    
+      <div class="invetorySet">
+        <h3>Backpack</h3>
+      </div>
+
+    </div>
+    <footer></footer>
+      
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+:root {
+    --base: .5rem;
+    --base-x2: calc(var(--base)*2);
+    --base-x3: calc(var(--base)*3);
+    --base-x4: calc(var(--base)*4);
+    --base-x5: calc(var(--base)*5);
+    --base-x6: calc(var(--base)*6);
+    --base-x7: calc(var(--base)*7);
+    --base-x8: calc(var(--base)*8);
+    --base-x9: calc(var(--base)*9);
+    --base-x10: calc(var(--base)*10);
+    --base-x11: calc(var(--base)*11);
+    --base-x12: calc(var(--base)*12);
+    --base-x13: calc(var(--base)*13);
+    --base-x14: calc(var(--base)*14);
+  }
+    
+* {
+    /* margin: 0; */
+    box-sizing: border-box;
+}
+  
+.instrument {
+width: var(--base-x10);
+height: var(--base-x10);
+background: #ddd;
+border-radius: 50%;
+cursor: pointer;
+background-position: center;
+background-size: cover;
+}
+
+.itemSlot {
+  background: #eee;
+  width: var(--base-x12);
+  height: var(--base-x12);
+}
+  .itemSlot.highlight {
+    background: cyan;
+  }
+  .itemSlot.over {
+    background: green;
+  }
+
+.item {
+  background: #ddd;
+  width: var(--base-x10);
+  height: var(--base-x10); 
+}
+ .item.dragging {
+   /* opacity: .3; */
+   background-color: red;
+ }
