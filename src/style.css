@@ -1,18 +1,5 @@
 :root {
     --base: .5rem;
-    --base-x2: calc(var(--base)*2);
-    --base-x3: calc(var(--base)*3);
-    --base-x4: calc(var(--base)*4);
-    --base-x5: calc(var(--base)*5);
-    --base-x6: calc(var(--base)*6);
-    --base-x7: calc(var(--base)*7);
-    --base-x8: calc(var(--base)*8);
-    --base-x9: calc(var(--base)*9);
-    --base-x10: calc(var(--base)*10);
-    --base-x11: calc(var(--base)*11);
-    --base-x12: calc(var(--base)*12);
-    --base-x13: calc(var(--base)*13);
-    --base-x14: calc(var(--base)*14);
   }
     
 * {
@@ -29,8 +16,8 @@ label {
 }
   
 .instrument {
-width: var(--base-x10);
-height: var(--base-x10);
+width: 5rem;
+height: 5rem;
 background: #ddd;
 border-radius: 50%;
 cursor: pointer;
@@ -40,8 +27,8 @@ background-size: cover;
 
 .itemSlot {
   background: #eee;
-  width: var(--base-x12);
-  height: var(--base-x12);
+  width: 6rem;
+  height: 6rem;
 }
   .itemSlot.highlight {
     background: cyan;
@@ -51,12 +38,13 @@ background-size: cover;
   }
 
 .item {
+  width: 5rem;
+  height: 5rem; 
   background: #ddd;
-  width: var(--base-x10);
-  height: var(--base-x10); 
+  background-size: cover;
 }
  .item.dragging {
-   /* opacity: .3; */
+   opacity: .3;
    background-color: red;
  }
 
@@ -80,13 +68,20 @@ background-size: cover;
   .modal > .container {
     position: relative;
     padding: 1rem;
-    width: calc(var(--base)*40);
-    border-radius: var(--base);
+    width: 30rem;
+    border-radius: .5rem;
     background: white;
   }
   .closeButton {
     position: absolute;
     top: 0;
     right: 0;
-    padding: var(--base-x2);
+    padding: 1rem;
+  }
+  .iconRow img {
+    width: 3rem;
+    cursor: pointer;
+  }
+  .iconRow img.selected {
+    border: 2px solid black;
   }

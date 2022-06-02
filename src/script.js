@@ -7,11 +7,14 @@ const heartsMax = document.getElementById("heartsMax")
 const heartsButton = document.getElementById("heartsButton")
 const heartsWrap = document.querySelector(".heartsWrap")
 const modal = document.getElementById('modal')
-const newItemImage = document.getElementById('newItemImage')
+const modalContainer = document.getElementById('modalContainer')
 const newItemName = document.getElementById('newItemName')
 const newItemAmount = document.getElementById('newItemAmount')
-var newItemUploadedImage = ""
+const createItemButton = document.getElementById('createItemButton')
+const iconImages = document.querySelectorAll('.iconImage')
 
+
+// Instrument image upload
 instrumentImgInput.addEventListener("change", function() {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
@@ -21,6 +24,7 @@ instrumentImgInput.addEventListener("change", function() {
   reader.readAsDataURL(this.files[0]);
 })
 
+// Edit the max of hearts
 function editHearts() {
   const heartsMaxValue = heartsMax.value
   let heartsChecks = `<div><input id="heart1" name="hearts" type="checkbox" checked><label for="heart1">♥</label></div>`
@@ -45,7 +49,7 @@ itemSlots.forEach(slot => {
   slot.addEventListener('dragover', dragover)
   slot.addEventListener('dragleave', dragleave)
   slot.addEventListener('drop', drop)
-  slot.addEventListener('click', createItem)
+  slot.addEventListener('click', openModal)
 })
 
 function dragstart() {
@@ -74,45 +78,63 @@ function drop() {
   this.classList.remove('over')
 }
 
-// Create new items
-function createItem() {
-  
-  if(!this.hasChildNodes()) {
-
-    let newItem = document.createElement('div')
-    newItem.classList.add('item')
-    newItem.setAttribute('draggable', 'true')
-    newItem.style.backgroundImage = `url(${newItemUploadedImage})`
-
-    let counter = document.createElement('div')
-    counter.classList.add('itemCounter')
-    counter.innerText = newItemAmount.value
-    
-    let itemName = document.createElement('div')
-    itemName.classList.add('itemName')
-    itemName.innerText = newItemName.value
-
-    newItem.appendChild(counter)
-    newItem.appendChild(itemName)
-  
-    this.appendChild(newItem)
-    newItem.addEventListener('dragstart', dragstart)
-    newItem.addEventListener('dragend', dragend)
+//Modal control
+function openModal() {
+  if(!this.hasChildNodes()){
+    modal.classList.add('on')
+    itemSlots.forEach(slot => {
+      slot.classList.remove('targetSlot')
+    })
+    this.classList.add('targetSlot')
   }
+}
+function closeModal(event) {
+  modal.classList.remove('on')
+  event.preventDefault
+}
+    
+
+// Create new items
+createItemButton.addEventListener('click', createItem)
+
+function createItem(event) {
+
+  event.preventDefault()
+
+  const iconSelected = document.querySelector('.iconImage.selected')
+  const iconSelectedSrc = iconSelected.src
+  
+  let newItem = document.createElement('div')
+  newItem.classList.add('item')
+  newItem.setAttribute('draggable', 'true')
+  newItem.addEventListener('dragstart', dragstart)
+  newItem.addEventListener('dragend', dragend)
+  newItem.style.backgroundImage = `url(${iconSelectedSrc})`
+
+  let amount = document.createElement('div')
+  amount.classList.add('itemAmount')
+  amount.innerText = newItemAmount.value
+  
+  let itemName = document.createElement('div')
+  itemName.classList.add('itemName')
+  itemName.innerText = newItemName.value
+  
+  newItem.appendChild(amount)
+  newItem.appendChild(itemName)
+
+  const targetSlot = document.querySelector(".targetSlot")
+  targetSlot.appendChild(newItem)
+  closeModal()
 
 }
 
-newItemImage.addEventListener('change', function(){
-  const reader = new FileReader()
-
-  reader.addEventListener("load", function(){
-    var newItemUploadedImage = reader.result
-  })
+iconImages.forEach(icon => {
+  icon.addEventListener("click", selectIconImage)
 })
 
-function openModal() {
-  modal.classList.add('on')
-}
-function closeModal() {
-  modal.classList.remove('on')
+function selectIconImage() {
+  iconImages.forEach(icon => {
+    icon.classList.remove('selected')
+  })
+  this.classList.add('selected')
 }

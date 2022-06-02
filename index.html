@@ -59,9 +59,7 @@
       <div class="invetorySet">
         <h3>Equipped</h3>
        
-        <div class="itemSlot">
-          <div class="item" draggable="true"></div>
-        </div>
+        <div class="itemSlot" id="itemSlot"></div>
         <div class="itemSlot"></div>
         <div class="itemSlot"></div>
         
@@ -76,21 +74,30 @@
       
     </section>
 
-    <section class="modal on" id="modal">
-      <div class="container">
+    <section class="modal" id="modal">
+      <div class="container" id="modalContainer">
         <h3 class="modalTitle">New Item</h3>
-        <a href="" class="closeButton">X</a>
+        <a href="" onclick="closeModal()" class="closeButton">X</a>
         
-        <label for="newItemName">Item Name</label>
+        <label for="newItemName">Name</label>
         <input name="newItemName" id="newItemName" type="text">
 
-        <label for="newItemAmount">Item Amount</label>
+        <label for="newItemAmount">Amount</label>
         <input name="newItemAmount" id="newItemAmount" type="number">
 
-        <label for="newItemImage">Image</label>
-        <input name="newItemImage" id="newItemImage" type="file" accept="image/jpg, image/png">
+        <label for="newItemImage">Icon</label>
+        <div class="iconRow">
+          <img class="iconImage" src="./src/img/broadsword.png" alt="">
+          <img class="iconImage" src="./src/img/leather-boot.png" alt="">
+          <img class="iconImage" src="./src/img/ocarina.png" alt="">
+          <img class="iconImage" src="./src/img/oden.png" alt="">
+          <img class="iconImage" src="./src/img/round-shield.png" alt="">
+          <img class="iconImage" src="./src/img/rupee.png" alt="">
+          <img class="iconImage" src="./src/img/shirt.png" alt="">
+          <img class="iconImage" src="./src/img/square-bottle.png" alt="">
+        </div>
 
-        <button id="createItemButton">Create Item</button>
+        <button id="createItemButton">Create new item</button>
       </div>
     </section>
 
