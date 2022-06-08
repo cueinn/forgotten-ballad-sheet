@@ -24,6 +24,7 @@ $color-main-medium: #3A5A40;
 $color-main-dark:   #344E41;
 $color-main-action: #588157;
 $color-main-overlay: #d8e9e6;
+$color-focus: #3474531c;
 
 $font-xs:  $base; //8px
 $font-sm:  $base*1.5; //14px
@@ -34,4 +35,4 @@ $font-xlg:    $base*3; //24px
 $border-radius: $base;
 $border-radius-big: $base*2;
 
-$shadow-focus: 0 0.25rem 0 0 #3474531c;
+$shadow-focus: 0 0.25rem 0 0 $color-focus;

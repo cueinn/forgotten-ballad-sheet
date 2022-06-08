@@ -39,28 +39,30 @@ input {
       left: $spacing1;
       display: block;
     }
-    .input{
-      width: 100%;
-      padding: 1.25rem 0.5rem 0.25rem;
+
+.input{
+  width: 100%;
+  padding: 1.25rem 0.5rem 0.25rem;
+
+  color: $color-main-dark;
+  font-family: inherit;
+  font-size: $font-md;
+  line-height: $font-lg;
+
+  border: none;
+  border-radius: $border-radius;
+  background: $color-light;
+  transition: box-shadow .3s, transform .3s;
   
-      color: $color-main-dark;
-      font-family: inherit;
-      font-size: $font-md;
-      line-height: $font-lg;
-  
-      border: none;
-      border-radius: $border-radius;
-      background: $color-light;
-      transition: box-shadow .3s, transform .3s;
-    }
-      .input:hover {
-        box-shadow: inset 0 0 0 2px $color-main-light;
-      }
-      .input:focus {
-        outline: none;
-        box-shadow: $shadow-focus, inset 0 0 0 2px $color-main-light;
-        transform: scale(1.05);
-      }
-      .input.small {
-        font-size: $font-sm;
-      }
+  &:hover {
+    box-shadow: inset 0 0 0 2px $color-main-light;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-focus, inset 0 0 0 2px $color-main-light;
+    transform: scale(1.05);
+  }
+  &.small {
+    font-size: $font-sm;
+  }
+}

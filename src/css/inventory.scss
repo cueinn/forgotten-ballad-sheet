@@ -60,11 +60,10 @@
     left: 0;
     right: 0;
     
-    padding: $spacing05;
+    padding: $spacing05 $spacing2;
 
-    color: $color-light;
-    text-align: center;
-    font-size: $font-md;
+    color: $color-bg;
+    font-size: $font-sm;
     line-height: $font-xlg;
 
     background-color: $color-main-dark;

@@ -15,7 +15,7 @@
   transition: box-shadow .3s, transform .3s;
   
   &:hover {
-    box-shadow: 0 0 0 $spacing05 $color-main-overlay;
+    box-shadow: 0 0 0 $spacing05 $color-focus;
     transform: scale(1.05);
   }
   .instrumentLabel {

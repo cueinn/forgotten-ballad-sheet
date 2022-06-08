@@ -16,8 +16,8 @@
 }
 
 .instrument:hover {
-  -webkit-box-shadow: 0 0 0 0.25rem #d8e9e6;
-          box-shadow: 0 0 0 0.25rem #d8e9e6;
+  -webkit-box-shadow: 0 0 0 0.25rem #3474531c;
+          box-shadow: 0 0 0 0.25rem #3474531c;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }

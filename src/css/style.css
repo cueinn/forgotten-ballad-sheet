@@ -9,6 +9,16 @@ html {
   font-family: 'Eczar', serif;
   background-color: #344E41;
   padding: 2rem;
+  letter-spacing: .02rem;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cSheet {
@@ -18,9 +28,9 @@ html {
   color: #344E41;
   background: #DAD7CD;
   border: 1.5rem solid #DAD7CD;
-  -webkit-box-shadow: inset 0 0 0 2px #A3B18A;
-          box-shadow: inset 0 0 0 2px #A3B18A;
-  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 100px 80px rgba(17, 24, 3, 0.13), 0px 22.3363px 17.869px rgba(17, 24, 3, 0.0774939), 0px 6.6501px 5.32008px rgba(17, 24, 3, 0.0525061), inset 0 0 0 2px #A3B18A;
+          box-shadow: 0px 100px 80px rgba(17, 24, 3, 0.13), 0px 22.3363px 17.869px rgba(17, 24, 3, 0.0774939), 0px 6.6501px 5.32008px rgba(17, 24, 3, 0.0525061), inset 0 0 0 2px #A3B18A;
+  border-radius: 2rem;
 }
 
 button {
@@ -182,8 +192,8 @@ input:focus {
 }
 
 .instrument:hover {
-  -webkit-box-shadow: 0 0 0 0.25rem #d8e9e6;
-          box-shadow: 0 0 0 0.25rem #d8e9e6;
+  -webkit-box-shadow: 0 0 0 0.25rem #3474531c;
+          box-shadow: 0 0 0 0.25rem #3474531c;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -409,10 +419,9 @@ input:focus {
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.25rem;
-  color: #F8F8F7;
-  text-align: center;
-  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  color: #DAD7CD;
+  font-size: 0.75rem;
   line-height: 1.5rem;
   background-color: #344E41;
 }
@@ -477,7 +486,7 @@ footer {
 .footerInput {
   height: 2.5rem;
   width: 100%;
-  padding-left: 3.5rem;
+  padding-left: 3rem;
   color: #344E41;
   font-family: inherit;
   background-color: #F8F8F7;

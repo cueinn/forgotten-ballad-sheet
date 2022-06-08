@@ -61,10 +61,9 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.25rem;
-  color: #F8F8F7;
-  text-align: center;
-  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  color: #DAD7CD;
+  font-size: 0.75rem;
   line-height: 1.5rem;
   background-color: #344E41;
 }
