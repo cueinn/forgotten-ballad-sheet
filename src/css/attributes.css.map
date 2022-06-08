@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,aAAa;EAC9B,aAAa,ECAH,IAAO;CDClB",
+    "sources": [
+        "attributes.scss",
+        "tokens.scss"
+    ],
+    "names": [],
+    "file": "attributes.css"
+}

@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Eczar", serif;
+  background-color: #344E41;
+  padding: 2rem;
+}
+
+section {
+  position: relative;
+  width: 40rem;
+  padding: 2rem;
+  background: #DAD7CD;
+  border: 1.5rem solid #DAD7CD;
+  -webkit-box-shadow: inset 0 0 0 2px #A3B18A;
+          box-shadow: inset 0 0 0 2px #A3B18A;
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=base.css.map */

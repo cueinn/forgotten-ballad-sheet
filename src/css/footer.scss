@@ -1,0 +1,55 @@
+@import "tokens";
+
+footer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: $spacing2;
+}
+
+.footerInputGroup {
+  position: relative;
+  width: 100%;
+
+  & > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $spacing5;
+    height: $spacing5;
+
+    background-color: $color-main-light;
+    border-radius: $base 0 0 $base;
+    border: 2px solid $color-light;
+    transition: border .3s ease-out, box-shadow .3s ease-out;
+  }
+}
+
+.footerInput {
+  height: $spacing5;
+  width: 100%;
+
+  padding-left: $spacing7;
+
+  color: $color-main-dark;
+  font-family: inherit;
+
+  background-color: $color-light;
+  border: 2px solid $color-light;
+  border-radius: $border-radius;
+  transition: border .3s ease-out, box-shadow .3s ease-out;
+
+  &:focus,
+  &:focus ~ label, 
+  &:hover,
+  &:hover ~ label {
+    border-color: $color-main-light;
+  }
+  &:focus,
+  &:focus ~ label {
+    box-shadow: $shadow-focus;
+  }
+}

@@ -1,0 +1,14 @@
+.logo {
+  position: relative;
+  left: 50%;
+  margin-top: -3rem;
+  margin-left: -87px;
+  display: inline-block;
+  padding: 0.5rem;
+  background: #DAD7CD;
+}
+
+.logo .logoImg {
+  height: 4rem;
+}
+/*# sourceMappingURL=logo.css.map */

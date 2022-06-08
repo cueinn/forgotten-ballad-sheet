@@ -1,0 +1,95 @@
+@import "tokens";
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  color: $color-main-dark;
+  
+  background-color: rgba(44, 65, 66, .8);
+
+  &.on{
+    display: flex;
+  }
+
+  & .closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    max-height: $spacing6;
+    padding: $spacing3;
+    text-decoration: underline;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(.9)
+    
+    }
+    &>img {
+      transition: background-color 0.3s;
+      border-radius: 50%;
+    }
+    &:hover>img {
+      background-color: $color-main-overlay;
+    }
+  }
+
+  &>.container {
+    position: relative;
+    max-width: $spacing50;
+    padding: $spacing3;
+    border-radius: $border-radius;
+    background-color: $color-bg;
+
+    & button {
+      display: block;
+      width: 100%;
+    }
+  }
+
+}
+
+.modalTitle {
+  font-size: $font-lg;
+  line-height: $font-xlg;
+  margin: $spacing2 0 $spacing3;
+}
+
+.modalRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: $spacing2;
+}
+
+.iconRow {
+  position: relative;
+  margin-bottom: $spacing3;
+  padding-top: $spacing3;
+
+  &>.labelBoxed {
+    left: 0;
+    color: $color-main-medium;
+  }
+}
+
+.iconImage {
+  width: $spacing5;
+  border-radius: $border-radius;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border .3s, box-shadow .3s;
+
+  &.selected {
+    border-color: $color-main-light;
+    box-shadow: 0 0 0 2px $color-light;
+  }
+}

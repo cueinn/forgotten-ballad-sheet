@@ -1,0 +1,62 @@
+.instrument {
+  position: relative;
+  z-index: 20;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 4px solid #344E41;
+  background: #F8F8F7;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow .3s, -webkit-transform .3s;
+  transition: -webkit-box-shadow .3s, -webkit-transform .3s;
+  transition: box-shadow .3s, transform .3s;
+  transition: box-shadow .3s, transform .3s, -webkit-box-shadow .3s, -webkit-transform .3s;
+}
+
+.instrument:hover {
+  -webkit-box-shadow: 0 0 0 0.25rem #d8e9e6;
+          box-shadow: 0 0 0 0.25rem #d8e9e6;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.instrument .instrumentLabel {
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
+  z-index: 30;
+  padding: 0 0.25rem;
+  color: #F8F8F7;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  background-color: #344E41;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.instrument .instrumentLabel::before, .instrument .instrumentLabel::after {
+  content: '';
+  position: absolute;
+  z-index: -10;
+  top: 0.5rem;
+  border: 0.5rem solid #344E41;
+  border-bottom: 0.5rem solid transparent;
+}
+
+.instrument .instrumentLabel::before {
+  left: 0;
+  border-right: 0.5rem solid transparent;
+}
+
+.instrument .instrumentLabel::after {
+  right: 0;
+  border-left: 0.5rem solid transparent;
+}
+
+.instrument .instrumentInput {
+  visibility: hidden;
+}
+/*# sourceMappingURL=instrument.css.map */

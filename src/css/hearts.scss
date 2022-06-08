@@ -1,0 +1,71 @@
+@import "tokens";
+
+#hearts {
+  position: relative;
+  padding-right: $spacing4;
+  margin-right: -$spacing4;
+
+  &:hover>.heartMaxWrap {
+    display: block;
+  }
+}
+
+.heartsWrap {
+  display: flex;
+  max-width: $spacing40;
+  flex-wrap: wrap;
+}
+  .heartItem {
+    padding: $base / 2;
+    height: $spacing4;
+  }
+    .heartInput {
+      position: absolute;
+      visibility: hidden;
+    }
+    .heartLabel {
+      cursor: pointer;
+    }
+    .heartIconFilled {
+      position: absolute;
+      opacity: 0;
+      transform: scale(1.5);
+      transition: opacity .3s, transform .3s;
+    }
+    .heartInput:checked ~ .heartLabel>.heartIconFilled {
+      display: block;
+      transform: scale(1);
+      opacity: 1;
+    }
+    .heartInput:checked ~ .heartLabel>.heartIconFilled:hover {
+      opacity: .75;
+    }
+  
+    .heartMaxWrap {
+      display: none;
+      position: absolute;
+      top: -$spacing1;
+      left: 100%;
+      margin-left: -$spacing3;
+
+      padding: $spacing1;
+      background: $color-bg;
+      border-radius: $border-radius;
+      
+      &>* {
+        display: block;
+      }
+
+      &>.inputGroup {
+        margin-right: 0;
+      }
+  }
+    #heartsMax {
+      width: 7rem;
+      font-size: $font-lg;
+    }
+    #heartsButton {
+      position: absolute;
+      top: 0.8rem;
+      right: $spacing2;
+    }

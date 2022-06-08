@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@700&family=Lato:ital,wght@0,700;1,700&display=swap');
+
+:root {
+    --base: .5rem;
+    --spacing-x1: var(--base);
+    --spacing-x2: calc(var(--base)*2);
+    --spacing-x3: calc(var(--base)*3);
+    --spacing-x4: calc(var(--base)*4);
+    --spacing-x5: calc(var(--base)*5);
+    
+    --color-light:       #F8F8F7;
+    --color-bg:          #DAD7CD;
+    --color-main-light:  #A3B18A;
+    --color-main-medium: #3A5A40;
+    --color-main-dark:   #344E41;
+    --color-main-action: #588157;
+
+    --border-radius: var(--base);
+
+    --shadow-focus: 0 0.25rem 0 0 #3474531c;
+  }
+    
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+  font-family: 'Eczar', serif;
+  background-color: var(--color-main-dark);
+  padding: var(--spacing-x4)
+}
+
+section {
+  position: relative;
+  width: 40rem;
+  padding: var(--spacing-x4);
+  background: var(--color-bg);
+  border: var(--spacing-x3) solid var(--color-bg);
+  box-shadow: inset 0 0 0 2px var(--color-main-light);
+  border-radius: var(--border-radius);
+}
+
+input {
+  border: none;
+  background: transparent;
+}
+  input:focus {
+    outline: none;
+  }
+
+
+.logo {
+  position: relative;
+  left: 50%;
+  margin-top: -3rem;
+  margin-left: -87px;
+  
+  display: inline-block;
+  padding: var(--base);
+  background: var(--color-bg);
+}
+.logoImg {
+  height: 4rem;
+}
+
+.about {
+  display: flex;
+  margin-bottom: var(--spacing-x4);
+}
+
+.labelBoxed,
+.heartMaxWrap>label {
+    color: var(--color-main-light);
+    font-family: 'Lato', sans-serif;
+    font-size: .6rem;
+    font-style: italic;
+    line-height: 1rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+.inputGroup {
+  position: relative;
+  margin-right: 1rem;
+}
+  .inputGroup:last-child {
+    margin-right: 0;
+  }
+  .inputGroup.pronouns {
+    flex-shrink: 2;
+  }
+  .labelBoxed {
+    position: absolute;
+    z-index: 10;
+    top: calc(var(--base)/2);
+    left: var(--base);
+    display: block;
+  }
+  .input{
+    width: 100%;
+    padding: 1.25rem 0.5rem 0.25rem;
+
+    color: var(--color-main-dark);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-light);
+    transition: box-shadow .3s, transform .3s;
+  }
+    .input:hover {
+      box-shadow: inset 0 0 0 2px var(--color-main-light);
+    }
+    .input:focus {
+      outline: none;
+      box-shadow: var(--shadow-focus), inset 0 0 0 2px var(--color-main-light);
+      transform: scale(1.05);
+    }
+    .input.small {
+      font-size: .9rem;
+    }
+
+.attributes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.instrument {
+  position: relative;
+  z-index: 20;
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 50%;
+  border: 4px solid var(--color-main-dark);
+  background: var(--color-light);
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  transition: box-shadow .3s, transform .3s, border .3s;
+}
+  .instrument:hover {
+    box-shadow: var(--shadow-focus);
+    transform: scale(1.05);
+    border-color: var(--color-main-light);
+  }
+  .instrumentLabel {
+    position: absolute;
+    top: -.5rem;
+    z-index: 30;
+
+    padding: 0 calc(var(--spacing-x1)/2);
+
+    color: var(--color-light);
+    font-size: .75rem;
+    line-height: 1rem;
+    background-color: var(--color-main-dark);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+    .instrumentLabel::before,
+    .instrumentLabel::after{
+      content: '';
+      position: absolute;
+      z-index: -10;
+      top: 1rem;
+      border: 0.5rem solid var(--color-main-dark);
+      border-bottom: 0.5rem solid transparent;
+    }
+    .instrumentLabel::before {
+      left: 0;
+      border-right: 0.5rem solid transparent;
+    }
+    .instrumentLabel::after {
+      right: 0;
+      border-left: 0.5rem solid transparent;
+    }
+  .instrumentInput {
+    visibility: hidden;
+  }
+
+.armor {
+  --armor-size: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--armor-size);
+  height: var(--armor-size);
+
+  background-image: url(./img/armor.png);
+  background-repeat: no-repeat;
+  background-size: var(--armor-size);
+  transition: transform .3s;
+}
+  .armor:hover {
+    transform: scale(1.1);
+  }
+  .armorInput {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: var(--color-light);
+    padding-left: 2rem;
+  }
+
+#hearts {
+  position: relative;
+}
+.heartsWrap {
+  display: flex;
+  width: 20rem;
+  flex-wrap: wrap;
+}
+  .heartItem {
+    padding: 0.25rem;
+    height: 2rem;
+  }
+    .heartInput {
+      position: absolute;
+      visibility: hidden;
+    }
+    .heartLabel {
+      cursor: pointer;
+    }
+    .heartIconFilled {
+      position: absolute;
+      opacity: 0;
+      transform: scale(1.5);
+      transition: opacity .3s, transform .3s;
+    }
+    .heartInput:checked ~ .heartLabel>.heartIconFilled {
+      display: block;
+      transform: scale(1);
+      opacity: 1;
+    }
+    .heartInput:checked ~ .heartLabel>.heartIconFilled:hover {
+      opacity: .75;
+    }
+  .heartMaxWrap {
+    position: absolute;
+    top: 0;
+    right: -6rem;
+    width: 5rem;
+    padding: var(--spacing-x1);
+    background: var(--color-main-dark);
+    border-radius: var(--border-radius);
+  }
+    .heartMaxWrap>* {
+      display: block;
+    }
+    #heartsMax {
+      width: 100%;
+      color: var(--color-light);
+      font-family: inherit;
+      font-size: 1.25rem;
+    }
+
+
+
+.itemSlot {
+  background: #eee;
+  width: 6rem;
+  height: 6rem;
+}
+  .itemSlot.highlight {
+    background: cyan;
+  }
+  .itemSlot.over {
+    background: green;
+  }
+
+.item {
+  width: 5rem;
+  height: 5rem; 
+  background: #ddd;
+  background-size: cover;
+}
+ .item.dragging {
+   opacity: .3;
+   background-color: red;
+ }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #000000aa
+}
+  .modal.on {
+    display: flex;
+  }
+  .modal > .container {
+    position: relative;
+    padding: 1rem;
+    width: 30rem;
+    border-radius: .5rem;
+    background: white;
+  }
+  .closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+  }
+  .iconRow img {
+    width: 3rem;
+    cursor: pointer;
+  }
+  .iconRow img.selected {
+    border: 2px solid black;
+  }

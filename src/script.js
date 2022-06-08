@@ -27,13 +27,24 @@ instrumentImgInput.addEventListener("change", function() {
 // Edit the max of hearts
 function editHearts() {
   const heartsMaxValue = heartsMax.value
-  let heartsChecks = `<div><input id="heart1" name="hearts" type="checkbox" checked><label for="heart1">♥</label></div>`
+  let heartsChecks = `<div class="heartItem">
+                        <input class="heartInput" id="heart1" name="hearts" type="checkbox" checked>
+                        <label class="heartLabel" for="heart1">
+                          <img class="heartIconFilled" src="./src/img/heart-filled.svg" alt="Heart">
+                          <img src="./src/img/heart-empty.svg" alt="Heart">
+                        </label>
+                      </div>`
   for(let i = 1; i < heartsMaxValue; i++) {
-      heartsChecks += `<div><input id="heart${i+1}" name="hearts" type="checkbox" checked><label for="heart${i+1}">♥</label></div>`
+      heartsChecks += `<div class="heartItem">
+                        <input class="heartInput" id="heart${i+1}" name="hearts" type="checkbox" checked>
+                        <label class="heartLabel" for="heart${i+1}">
+                          <img class="heartIconFilled" src="./src/img/heart-filled.svg" alt="Heart">
+                          <img src="./src/img/heart-empty.svg" alt="Heart">
+                        </label>
+                      </div>`
   }
   heartsWrap.innerHTML = heartsChecks
 }
-
 
 
 // Drag and drop functions
@@ -92,7 +103,10 @@ function closeModal(event) {
   modal.classList.remove('on')
   event.preventDefault
 }
-    
+
+
+const closeButton = document.getElementById('closeButton')   
+closeButton.addEventListener('click', closeModal)
 
 // Create new items
 createItemButton.addEventListener('click', createItem)

@@ -1,0 +1,27 @@
+@import "tokens";
+
+button {
+  padding: .75em 1em .5em;
+  
+  color: $color-light;
+  font-family: inherit;
+  font-size: $font-md;
+  line-height: $font-lg;
+  
+  border: none;
+  border-radius: $border-radius;
+  background: $color-main-action;
+  box-shadow: 0px 4px 0px #2c4142;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+
+  &:hover {
+    transform: translateY(2px);
+    box-shadow: 0px 2px 0px #2c4142;
+  }
+  
+  &:active {
+    transform: translateY(4px);
+    box-shadow: 0px 0px 0px #2c4142;
+  }
+}

@@ -1,0 +1,35 @@
+.armor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-image: url(../img/armor.png);
+  background-repeat: no-repeat;
+  background-size: 3.5rem;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.armor:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.armor .armorInput {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.125rem;
+  color: #F8F8F7;
+  padding-left: 48%;
+}
+/*# sourceMappingURL=armor.css.map */

@@ -1,0 +1,65 @@
+footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.footerInputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.footerInputGroup > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #A3B18A;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: 2px solid #F8F8F7;
+  -webkit-transition: border .3s ease-out, -webkit-box-shadow .3s ease-out;
+  transition: border .3s ease-out, -webkit-box-shadow .3s ease-out;
+  transition: border .3s ease-out, box-shadow .3s ease-out;
+  transition: border .3s ease-out, box-shadow .3s ease-out, -webkit-box-shadow .3s ease-out;
+}
+
+.footerInput {
+  height: 2.5rem;
+  width: 100%;
+  padding-left: 3.5rem;
+  color: #344E41;
+  font-family: inherit;
+  background-color: #F8F8F7;
+  border: 2px solid #F8F8F7;
+  border-radius: 0.5rem;
+  -webkit-transition: border .3s ease-out, -webkit-box-shadow .3s ease-out;
+  transition: border .3s ease-out, -webkit-box-shadow .3s ease-out;
+  transition: border .3s ease-out, box-shadow .3s ease-out;
+  transition: border .3s ease-out, box-shadow .3s ease-out, -webkit-box-shadow .3s ease-out;
+}
+
+.footerInput:focus,
+.footerInput:focus ~ label, .footerInput:hover,
+.footerInput:hover ~ label {
+  border-color: #A3B18A;
+}
+
+.footerInput:focus,
+.footerInput:focus ~ label {
+  -webkit-box-shadow: 0 0.25rem 0 0 #3474531c;
+          box-shadow: 0 0.25rem 0 0 #3474531c;
+}
+/*# sourceMappingURL=footer.css.map */

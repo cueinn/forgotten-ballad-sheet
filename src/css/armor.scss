@@ -1,0 +1,29 @@
+@import "tokens";
+
+.armor {
+  $armor-size: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $armor-size;
+  height: $armor-size;
+
+  background-image: url(../img/armor.png);
+  background-repeat: no-repeat;
+  background-size: $armor-size;
+  transition: transform .3s;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  .armorInput {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: $font-lg;
+    color: $color-light;
+    padding-left: 48%;
+  }
+
+}

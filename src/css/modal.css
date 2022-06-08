@@ -1,0 +1,107 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #344E41;
+  background-color: rgba(44, 65, 66, 0.8);
+}
+
+.modal.on {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal .closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-height: 3rem;
+  padding: 1.5rem;
+  text-decoration: underline;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.modal .closeButton:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.modal .closeButton > img {
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border-radius: 50%;
+}
+
+.modal .closeButton:hover > img {
+  background-color: #d8e9e6;
+}
+
+.modal > .container {
+  position: relative;
+  max-width: 25rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #DAD7CD;
+}
+
+.modal > .container button {
+  display: block;
+  width: 100%;
+}
+
+.modalTitle {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.modalRow {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  margin-bottom: 1rem;
+}
+
+.iconRow {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.iconRow > .labelBoxed {
+  left: 0;
+  color: #3A5A40;
+}
+
+.iconImage {
+  width: 2.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  -webkit-transition: border .3s, -webkit-box-shadow .3s;
+  transition: border .3s, -webkit-box-shadow .3s;
+  transition: border .3s, box-shadow .3s;
+  transition: border .3s, box-shadow .3s, -webkit-box-shadow .3s;
+}
+
+.iconImage.selected {
+  border-color: #A3B18A;
+  -webkit-box-shadow: 0 0 0 2px #F8F8F7;
+          box-shadow: 0 0 0 2px #F8F8F7;
+}
+/*# sourceMappingURL=modal.css.map */

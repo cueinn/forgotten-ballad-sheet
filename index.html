@@ -6,49 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Sheet 🍃 Forgotten Ballad</title>
 
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-  <section>
+  <section class="cSheet">
 
     <header class="logo">
-      <h1>Forgotten<br>Ballad</h1>
+      <h1><img class="logoImg" src="./src/img/ForgottenBallad_logo_cs.png" alt="Forgotten Ballad Character Sheet Logo" title="Forgotten Ballad Character Sheet"></h1>
     </header>
     
     <div class="about">
-      <label>Name <input name="name" type="text"></label>
-      <label>Pronouns <input name="pronouns" type="text"></label>
-      <label>Background <input name="background" type="text"></label>
+      
+      <div class="inputGroup name">
+        <label class="labelBoxed">Name</label>
+        <input class="input" name="name" type="text" placeholder="Text here" value="Gamera Russo">
+      </div>
+      
+      <div class="inputGroup pronouns">
+        <label class="labelBoxed">Pronouns </label>
+        <input class="input small" name="pronouns" type="text" placeholder="Text here" value="They/Their">
+      </div>
+      
+      <div class="inputGroup background">
+        <label class="labelBoxed">Background </label>
+        <input class="input small" name="background" type="text" placeholder="Text here">
+      </div>
+
     </div>
     
     <div class="attributes">
       
-      <div class="instrument" id="instrument"><label>Instrument</label>
-        <input type="file" id="instrumentImgInput" accept="image/jpeg, image/png, image/jpg">
+      <div class="instrument" id="instrument">
+        <label class="instrumentLabel">Instrument</label>
+        <input class="instrumentInput" type="file" id="instrumentImgInput" accept="image/jpeg, image/png, image/jpg">
         </div>
       
-      <div id="armor">
-        <input name="armor" type="number" value="0" max="3" min="0">
+      <div class="armor" id="armor">
+        <input class="armorInput" name="armor" type="number" value="0" max="3" min="0">
       </div>
       
       <div id="hearts">
         <div class="heartsWrap">
-          <div>
-            <input id="heart1" name="hearts" type="checkbox" checked>
-            <label for="heart1">♥</label>
+
+          <div class="heartItem">
+            <input class="heartInput" id="heart1" name="hearts" type="checkbox" checked>
+            <label class="heartLabel" for="heart1">
+              <img class="heartIconFilled" src="./src/img/heart-filled.svg" alt="Heart">
+              <img src="./src/img/heart-empty.svg" alt="Heart">
+            </label>
           </div>
-          <div>
-            <input id="heart2" name="hearts" type="checkbox" checked>
-            <label for="heart2">♥</label>
+
+          <div class="heartItem">
+            <input class="heartInput" id="heart2" name="hearts" type="checkbox" checked>
+            <label class="heartLabel" for="heart2">
+              <img class="heartIconFilled" src="./src/img/heart-filled.svg" alt="Heart">
+              <img src="./src/img/heart-empty.svg" alt="Heart">
+            </label>
           </div>
-          <div>
-            <input id="heart3" name="hearts" type="checkbox" checked>
-            <label for="heart3">♥</label>
+
+          <div class="heartItem">
+            <input class="heartInput" id="heart3" name="hearts" type="checkbox" checked>
+            <label class="heartLabel" for="heart3">
+              <img class="heartIconFilled" src="./src/img/heart-filled.svg" alt="Heart">
+              <img src="./src/img/heart-empty.svg" alt="Heart">
+            </label>
           </div>
+
         </div>
-        <label for=""></label>
-        <input id="heartsMax" type="number" value="3">
-        <button id="heartsButton" onclick="editHearts()">Edit</button>
+        
+        <div class="heartMaxWrap">
+          <div class="inputGroup">
+            <label class="labelBoxed" for="heartsMax">Max</label>
+            <input class="input" id="heartsMax" type="number" value="3" min="1">
+          </div>
+          <button id="heartsButton" onclick="editHearts()">Edit</button>  
+        </div>
       </div>
       
     </div>
@@ -56,37 +88,75 @@
     <div class="inventory">
       <h2>Inventory</h2>
       
-      <div class="invetorySet">
-        <h3>Equipped</h3>
-       
-        <div class="itemSlot" id="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
+      <div class="inventorySets">
+      
+        <div class="inventorySet">
+
+          <h3>Equipped</h3>
         
-      </div>
-    
-      <div class="invetorySet">
-        <h3>Backpack</h3>
+          <div class="itemSlot" id="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          
+        </div>
+      
+        <div class="inventorySet">
+          
+          <h3>Backpack</h3>
+
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+
+        </div>
+
       </div>
 
     </div>
-    <footer></footer>
+    <footer>
+      <div class="footerInputGroup">
+        <input class="footerInput" id="inputBottle" type="text" placeholder="Bottle content">
+        <label for="inputBottle">
+          <img src="./src/img/Bottle.svg" alt="Bottle icon">
+        </label>
+      </div>
+      <div class="footerInputGroup">
+        <input class="footerInput" id="inputWallet" type="number" value="10">
+        <label for="inputWallet">
+          <img src="./src/img/Wallet.svg" alt="Wallet icon">
+        </label>
+      </div>
+    </footer>
       
     </section>
 
     <section class="modal" id="modal">
       <div class="container" id="modalContainer">
         <h3 class="modalTitle">New Item</h3>
-        <a href="" onclick="closeModal()" class="closeButton">X</a>
+        <a href="javascript:void(0);" class="closeButton" id="closeButton">
+          <img src="./src/img/iconClose.svg" alt="Close">
+        </a>
         
-        <label for="newItemName">Name</label>
-        <input name="newItemName" id="newItemName" type="text">
+        <div class="modalRow">
+          <div class="inputGroup">
+            <label class="labelBoxed" for="newItemName">Name</label>
+            <input class="input" name="newItemName" id="newItemName" type="text">
+          </div>
+  
+          <div class="inputGroup">
+            <label class="labelBoxed" for="newItemAmount">Amount</label>
+            <input class="input" name="newItemAmount" id="newItemAmount" type="number" min="1" value="1">
+          </div>
+        </div>
 
-        <label for="newItemAmount">Amount</label>
-        <input name="newItemAmount" id="newItemAmount" type="number">
-
-        <label for="newItemImage">Icon</label>
         <div class="iconRow">
+          <label class="labelBoxed">Icon</label>
           <img class="iconImage" src="./src/img/broadsword.png" alt="">
           <img class="iconImage" src="./src/img/leather-boot.png" alt="">
           <img class="iconImage" src="./src/img/ocarina.png" alt="">

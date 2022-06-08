@@ -1,0 +1,37 @@
+$base: .5rem;
+
+$spacing05: $base/2;
+$spacing1:  $base;
+$spacing2:  $base*2;
+$spacing3:  $base*3;
+$spacing4:  $base*4;
+$spacing5:  $base*5;
+$spacing6:  $base*6;
+$spacing7:  $base*7;
+$spacing8:  $base*8;
+$spacing9:  $base*9;
+$spacing10: $base*10;
+$spacing12: $base*12;
+$spacing20: $base*20;
+$spacing30: $base*30;
+$spacing40: $base*40;
+$spacing50: $base*50;
+
+$color-light:       #F8F8F7;
+$color-bg:          #DAD7CD;
+$color-main-light:  #A3B18A;
+$color-main-medium: #3A5A40;
+$color-main-dark:   #344E41;
+$color-main-action: #588157;
+$color-main-overlay: #d8e9e6;
+
+$font-xs:  $base; //8px
+$font-sm:  $base*1.5; //14px
+$font-md:   $base*2; //16px
+$font-lg: $base*2.25; //18px
+$font-xlg:    $base*3; //24px
+
+$border-radius: $base;
+$border-radius-big: $base*2;
+
+$shadow-focus: 0 0.25rem 0 0 #3474531c;

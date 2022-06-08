@@ -1,0 +1,16 @@
+@import "tokens";
+
+.logo {
+  position: relative;
+  left: 50%;
+  margin-top: -3rem;
+  margin-left: -87px;
+  
+  display: inline-block;
+  padding: $spacing1;
+  background: $color-bg;
+  
+  .logoImg {
+    height: 4rem;
+  }
+}

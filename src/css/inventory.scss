@@ -1,0 +1,88 @@
+@import "tokens";
+
+.inventory {
+  margin-bottom: $spacing3;
+}
+
+.inventory h2 {
+  position: relative;
+  margin-bottom: $spacing2;
+
+  font-size: $font-lg;
+  text-align: center;
+  line-height: $font-lg;
+
+  &::before,
+  &::after {
+    content: "";
+    
+    position: absolute;
+    top: 0;
+
+    width: 190px;
+    height: 16px;
+
+    background-image: url(../img/inventory-detail-l.svg);
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+    background-image: url(../img/inventory-detail-r.svg);
+  }
+
+}
+
+.inventorySets {
+  display: flex;
+  justify-content: space-between;
+  gap: $spacing3;
+}
+
+.inventorySet {
+  position: relative;
+  flex-grow: 1;
+  
+  display: grid;
+  column-gap: $spacing2;
+  row-gap: $spacing2;
+  grid-template-columns: 1fr 1fr;
+  padding: $spacing6 $spacing2 $spacing2;
+  overflow: hidden;
+
+  border-radius: $border-radius;
+  background-color: $color-light;
+
+  & > h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    padding: $spacing05;
+
+    color: $color-light;
+    text-align: center;
+    font-size: $font-md;
+    line-height: $font-xlg;
+
+    background-color: $color-main-dark;
+  }
+}
+
+.itemSlot {
+  width: 100%;
+  height: $spacing12;
+
+  background: $color-light;
+  background-size: cover;
+  border-radius: $border-radius;
+  border: 1px dashed $color-main-light;
+  transition: box-shadow .3s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0 $spacing05 $color-main-overlay;
+  }
+}
