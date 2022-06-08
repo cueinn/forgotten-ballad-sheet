@@ -24,6 +24,11 @@ instrumentImgInput.addEventListener("change", function() {
   reader.readAsDataURL(this.files[0]);
 })
 
+instrument.addEventListener("click", function(){
+    instrumentImgInput.click()
+})
+
+
 // Edit the max of hearts
 function editHearts() {
   const heartsMaxValue = heartsMax.value
