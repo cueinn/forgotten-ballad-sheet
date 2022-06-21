@@ -177,7 +177,8 @@ function selectIconImage() {
   this.classList.add('selected')
 }
 
-function deleteItem(e) {
-  this.parentElement.remove()
-  e.preventDefault()
+function deleteItem() {
+  setTimeout(() => 
+    this.parentElement.remove(), 1
+  )
 }
