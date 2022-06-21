@@ -69,6 +69,7 @@
 }
 
 .itemSlot {
+  position: relative;
   width: 100%;
   height: 6rem;
   background: #F8F8F7;
@@ -85,5 +86,91 @@
 .itemSlot:hover {
   -webkit-box-shadow: 0 0 0 0.25rem #d8e9e6;
           box-shadow: 0 0 0 0.25rem #d8e9e6;
+}
+
+.item {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 0.75rem;
+  background-size: cover;
+}
+
+.item:hover > .itemName {
+  opacity: 1;
+}
+
+.item:hover > .deleteItemButton {
+  opacity: 1;
+}
+
+.itemAmount {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  padding: 0.5rem 0.6rem 0.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #F8F8F7;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  background: #344E41;
+  border-radius: 20rem;
+}
+
+.itemAmount::-webkit-outer-spin-button,
+.itemAmount::-webkit-inner-spin-button {
+  display: none;
+}
+
+.itemName {
+  width: 100%;
+  background: #ffffff99;
+  line-height: 1;
+  opacity: .5;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.deleteItemButton {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  background: lightsalmon;
+  opacity: 0;
+  -webkit-transition: opacity .3s, -webkit-box-shadow .3s;
+  transition: opacity .3s, -webkit-box-shadow .3s;
+  transition: box-shadow .3s, opacity .3s;
+  transition: box-shadow .3s, opacity .3s, -webkit-box-shadow .3s;
+}
+
+.deleteItemButton:hover {
+  -webkit-box-shadow: 0 0 0 2px lightsalmon;
+          box-shadow: 0 0 0 2px lightsalmon;
+}
+
+.deleteItemButton > img {
+  width: 0.5rem;
 }
 /*# sourceMappingURL=inventory.css.map */

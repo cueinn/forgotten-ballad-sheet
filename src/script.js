@@ -108,6 +108,11 @@ function closeModal(event) {
   modal.classList.remove('on')
   event.preventDefault
 }
+function clearModal() {
+  newItemAmount.value = 1
+  newItemName.value = ''
+  document.querySelector('.iconImage.selected').classList.remove('selected')
+}
 
 
 const closeButton = document.getElementById('closeButton')   
@@ -130,19 +135,33 @@ function createItem(event) {
   newItem.addEventListener('dragend', dragend)
   newItem.style.backgroundImage = `url(${iconSelectedSrc})`
 
-  let amount = document.createElement('div')
+  let amount = document.createElement('input')
+  amount.type = 'number'
   amount.classList.add('itemAmount')
-  amount.innerText = newItemAmount.value
+  amount.value = newItemAmount.value
   
-  let itemName = document.createElement('div')
+  let itemName = document.createElement('input')
+  itemName.type = 'text'
   itemName.classList.add('itemName')
-  itemName.innerText = newItemName.value
+  itemName.value = newItemName.value
+
+  let deleteItemButton = document.createElement('div')
+  deleteItemButton.classList.add('deleteItemButton')
+
+  let deleteItemButtonIcon = document.createElement('img')
+  deleteItemButtonIcon.src = './src/img/xmark.svg'
+
+  deleteItemButton.appendChild(deleteItemButtonIcon)
+  deleteItemButton.addEventListener('click', deleteItem)
   
   newItem.appendChild(amount)
   newItem.appendChild(itemName)
+  newItem.appendChild(deleteItemButton)
 
   const targetSlot = document.querySelector(".targetSlot")
   targetSlot.appendChild(newItem)
+  
+  clearModal()
   closeModal()
 
 }
@@ -156,4 +175,9 @@ function selectIconImage() {
     icon.classList.remove('selected')
   })
   this.classList.add('selected')
+}
+
+function deleteItem(e) {
+  this.parentElement.remove()
+  e.preventDefault()
 }
