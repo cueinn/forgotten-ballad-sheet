@@ -28,17 +28,17 @@
       
       <div class="inputGroup name">
         <label class="labelBoxed">Name</label>
-        <input class="input" name="name" type="text" placeholder="Text here">
+        <input class="input" name="name" type="text" id="charName" placeholder="Text here">
       </div>
       
       <div class="inputGroup pronouns">
         <label class="labelBoxed">Pronouns </label>
-        <input class="input small" name="pronouns" type="text" placeholder="Text here">
+        <input class="input small" name="pronouns" type="text" id="charPronouns" placeholder="Text here">
       </div>
       
       <div class="inputGroup background">
         <label class="labelBoxed">Background </label>
-        <input class="input small" name="background" type="text" placeholder="Text here">
+        <input class="input small" name="background" type="text" id="charBackground" placeholder="Text here">
       </div>
 
     </div>
@@ -51,7 +51,7 @@
         </div>
       
       <div class="armor" id="armor">
-        <input class="armorInput" name="armor" type="number" value="0" max="3" min="0">
+        <input class="armorInput" name="armor" type="number" id="charArmor" value="0" max="3" min="0">
       </div>
       
       <div id="hearts">
@@ -88,7 +88,7 @@
             <label class="labelBoxed" for="heartsMax">Max</label>
             <input class="input" id="heartsMax" type="number" value="3" min="1">
           </div>
-          <button id="heartsButton" onclick="editHearts()">Edit</button>  
+          <button id="heartsButton">Edit</button>  
         </div>
       </div>
       

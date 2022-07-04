@@ -1,7 +1,11 @@
 // helper functions
 function log(message) {console.log(message)}
 
+// HTML elements
+const charName = document.getElementById('charName')
+const charPronouns = document.getElementById('charPronouns')
 const instrument = document.getElementById('instrument')
+const charArmor = document.getElementById('charArmor')
 const instrumentImgInput = document.getElementById("instrumentImgInput")
 const heartsMax = document.getElementById("heartsMax")
 const heartsButton = document.getElementById("heartsButton")
@@ -12,26 +16,52 @@ const newItemName = document.getElementById('newItemName')
 const newItemAmount = document.getElementById('newItemAmount')
 const createItemButton = document.getElementById('createItemButton')
 const iconImages = document.querySelectorAll('.iconImage')
+const bottle = document.getElementById('inputBottle')
+const wallet = document.getElementById('inputWallet')
 
+
+// Set and save character basic information
+charName.addEventListener('change', () => localStorage.setItem('charName', charName.value))
+charName.value = localStorage.getItem('charName')
+
+charPronouns.addEventListener('change', () => localStorage.setItem('charPronouns', charPronouns.value))
+charPronouns.value = localStorage.getItem('charPronouns')
+
+charBackground.addEventListener('change', () => localStorage.setItem('charBackground', charBackground.value))
+charBackground.value = localStorage.getItem('charBackground')
+
+charArmor.addEventListener('change', () => localStorage.setItem('charArmor', charArmor.value))
+charArmor.value = localStorage.getItem('charArmor')
+
+bottle.addEventListener('change', () => localStorage.setItem('bottle', bottle.value))
+bottle.value = localStorage.getItem('bottle')
+
+wallet.addEventListener('change', () => localStorage.setItem('wallet', wallet.value))
+wallet.value = localStorage.getItem('wallet')
 
 // Instrument image upload
 instrumentImgInput.addEventListener("change", function() {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     const uploaded_image = reader.result;
+    localStorage.setItem('instrument', uploaded_image)
     instrument.style.backgroundImage = `url(${uploaded_image})`
   });
   reader.readAsDataURL(this.files[0]);
 })
 
+// Get instrument image from localStorage
+instrument.style.backgroundImage = `url(${localStorage.getItem('instrument')})`
+
 instrument.addEventListener("click", function(){
     instrumentImgInput.click()
 })
 
-
 // Edit the max of hearts
+heartsMax.value = localStorage.getItem('heartsMax')
 function editHearts() {
   const heartsMaxValue = heartsMax.value
+  localStorage.setItem('heartsMax', heartsMaxValue)
   let heartsChecks = `<div class="heartItem">
                         <input class="heartInput" id="heart1" name="hearts" type="checkbox" checked>
                         <label class="heartLabel" for="heart1">
@@ -50,6 +80,8 @@ function editHearts() {
   }
   heartsWrap.innerHTML = heartsChecks
 }
+editHearts()
+heartsButton.addEventListener("click", editHearts)
 
 
 // Drag and drop functions
