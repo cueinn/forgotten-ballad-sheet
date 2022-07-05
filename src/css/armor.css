@@ -25,11 +25,12 @@
 }
 
 .armor .armorInput {
-  border: none;
-  background: transparent;
+  max-width: 100%;
+  color: #F8F8F7;
   font-family: inherit;
   font-size: 1.125rem;
-  color: #F8F8F7;
-  padding-left: 48%;
+  text-align: center;
+  border: none;
+  background: transparent;
 }
 /*# sourceMappingURL=armor.css.map */

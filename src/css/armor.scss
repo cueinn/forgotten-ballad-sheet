@@ -18,12 +18,15 @@
   }
   
   .armorInput {
-    border: none;
-    background: transparent;
+    max-width: 100%;
+
+    color: $color-light;
     font-family: inherit;
     font-size: $font-lg;
-    color: $color-light;
-    padding-left: 48%;
+    text-align: center;
+
+    border: none;
+    background: transparent;
   }
 
 }
