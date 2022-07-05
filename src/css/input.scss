@@ -51,6 +51,7 @@ input[type=number] {
 
 .input{
   width: 100%;
+  height: $base * 6;
   padding: 1.25rem 0.5rem 0.25rem;
 
   color: $color-main-dark;

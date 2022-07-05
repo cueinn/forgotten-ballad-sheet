@@ -140,6 +140,7 @@ input[type=number] {
 
 .input {
   width: 100%;
+  height: 3rem;
   padding: 1.25rem 0.5rem 0.25rem;
   color: #344E41;
   font-family: inherit;
