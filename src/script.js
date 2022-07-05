@@ -32,6 +32,9 @@ charBackground.value = localStorage.getItem('charBackground')
 
 charArmor.addEventListener('change', () => localStorage.setItem('charArmor', charArmor.value))
 charArmor.value = localStorage.getItem('charArmor')
+if(localStorage.getItem('charArmor') === null) {
+  charArmor.value = 0
+}
 
 bottle.addEventListener('change', () => localStorage.setItem('bottle', bottle.value))
 bottle.value = localStorage.getItem('bottle')
@@ -59,6 +62,9 @@ instrument.addEventListener("click", function(){
 
 // Edit the max of hearts
 heartsMax.value = localStorage.getItem('heartsMax')
+if(localStorage.getItem('heartsMax') === null) {
+  heartsMax.value = 3
+}
 function editHearts() {
   const heartsMaxValue = heartsMax.value
   localStorage.setItem('heartsMax', heartsMaxValue)
